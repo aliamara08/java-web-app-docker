@@ -1,3 +1,4 @@
-FROM tomcat:8.0.20-jre8
-# Dummy text to test 
-COPY target/java-web-app*.war /usr/local/tomcat/webapps/java-web-app.war
+FROM openjdk:17
+WORKDIR /app
+COPY target/*.jar app.jar
+CMD ["java","-jar","app.jar"]
